@@ -10,11 +10,13 @@ const listingSchema = new Schema({
     type: String, // <-- also corrected this line
   },
   image: {
-
     type: String,
     required: true,
     default: "https://images.unsplash.com/photo-1755095901325-637deba5b2b5?...",
-    set:(v)=> v===""? "https://images.unsplash.com/photo-1755095901325-637deba5b2b5?..." : v,
+    set: (v) =>
+      v === ""
+        ? "https://images.unsplash.com/photo-1755095901325-637deba5b2b5?..."
+        : v,
   },
   price: { type: Number, required: true },
   location: { type: String, required: true },
@@ -22,4 +24,4 @@ const listingSchema = new Schema({
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
-module.exports = Listing; // ✅ correct export
+module.exports = Listing;

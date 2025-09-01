@@ -1,24 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wanderlust</title>
-  </head>
-  <body>
-    <h3>Create new listing:</h3>
-    <form method="POST" action="/listings">
-      <input type="text" name="listing[title]" placeholder="Enter new title: " /><br><br>
-      <textarea
-        type="text"
-        placeholder="enter your destails"
-        name="listing[description]"
-      ></textarea><br><br>
-      <input placeholder="Enter Price: " name="listing[price]" type="number" /> <br><br>
-      <input placeholder="Enter Country: " name="listing[country]" type="text" /><br><br>
-      <input placeholder="Enter the location: " name="listing[location]" type="text" /><br><br>
+<%layout("/layouts/boilerplate.ejs")%>
 
-      <button>Add Listing</button>
+<div class="row">
+  <div class="col-8 offset-2">
+    <br /><br />
+    <h3>Create new listing</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input
+          type="text"
+          name="listing[title]"
+          placeholder="Enter new title: "
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Wrong! Information.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea
+          type="text"
+          placeholder="enter your details"
+          name="listing[description]"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Wrong! Information.</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price:</label>
+          <input
+            placeholder="Enter Price: "
+            class="form-control"
+            name="listing[price]"
+            type="number"
+            required
+          />
+          <div class="invalid-feedback">Wrong! Information.</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country:</label>
+          <input
+            placeholder="Enter Country: "
+            name="listing[country]"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Wrong! Information.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="location">Location: </label>
+        <input
+          placeholder="Enter the location: "
+          name="listing[location]"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Wrong! Information.</div>
+      </div>
+
+      <button class="mb-3 mt-4 btn btn-dark">Add Listing</button>
+      <br />
+      <br />
     </form>
-  </body>
-</html>
+  </div>
+</div>

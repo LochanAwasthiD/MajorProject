@@ -1,0 +1,91 @@
+
+body {
+  font-family: "Google Sans Code", monospace !important;
+  font-optical-sizing: auto;
+  font-weight: 400; /* normal weight */
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+
+}
+.container{
+    flex: 1;
+}
+
+
+
+.-info{
+
+    display: flex;
+    height: 8rem;
+    background-color: grey;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: space-evenly;
+    text-align: center;
+
+    
+}
+footer{
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
+.social {
+  width: 100%;
+  font-size: 1.2rem;
+  display: inline-block;            /* so transform scales nicely */
+  transition: transform .2s ease;
+  margin-top: 10px;   /* smooth animation */
+}
+
+.social:hover{
+  transform: scale(1.2);            /* make it bigger on hover */
+}
+.contact{
+    width: 100%;
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+.contact:hover{
+    transform: scale(1.2);
+}
+
+/* Listings show */
+.listing-link{
+    text-decoration: none;
+    border:none !important;
+    padding: 0px !important;
+    display: flex;
+    justify-content: center;
+
+}
+.card{
+    border:none !important;
+    margin-bottom: 2rem;
+    gap: 10px !important; 
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    opacity: 0.7;
+}
+
+.card-img-top:hover{
+    opacity: 1;
+}
+.card-body{
+    padding: 0 !important;
+}
+.main{
+  padding: 0px 0px !important;
+}
+
+
+
